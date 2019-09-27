@@ -1,0 +1,27 @@
+{% extends 'common/base_html.html' %}
+{% load staticfiles %}
+
+{% block title %}Weather Checker{% endblock %}
+
+{% block content %}
+
+    <form action="" method="POST">
+    {% csrf_token %}
+        <label for="user_city_input"><h2>Enter City Name:</h2> </label>
+        <input id="user_city_input" type="text" name="your_name" value="{{ tem }}">
+        <input type="submit" value="OK">
+    </form>
+    {% if request.method == 'GET' %}
+
+    {% else %}
+    <div class="card" style="width: 30rem;margin-left: 30%">
+  <div class="card-body">
+    <h3>Current Temperature: {{ temp }}</h3>
+    <h3>Current Pressure: {{ pressure }}</h3>
+    <h3>Current Humidity: {{ humidity }}</h3>
+    <h3>Description of the Location: {{ desc }}</h3>
+  </div>
+</div>
+    {% endif %}
+{% endblock %}
+

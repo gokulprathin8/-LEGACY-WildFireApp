@@ -1,0 +1,23 @@
+{% extends 'common/base_html.html' %}
+
+{% load bootstrap4 %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <div class="container" style="margin-left: 30%; padding-right: 50%">
+        <div class="content-section">
+            <form method="POST">
+                <legend class="border-botton mb-4"> Join Our WildFire Detector</legend>
+                {% csrf_token %}
+                {% bootstrap_form form layout="inline" %}
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

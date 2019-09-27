@@ -1,0 +1,18 @@
+{% extends 'common/base_html.html' %}
+{% block title %} Make a Alert {% endblock %}
+
+{% block content %}
+    <br>
+    <h1 style="padding-left: 500px">Make a Alert!</h1>
+
+    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    {% for i in dict %}
+      <a class="dropdown-item" href="#">{% i[0] %}</a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

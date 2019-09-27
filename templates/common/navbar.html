@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">WildFire Detector</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          {% if user.is_authenticated %}
+<ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'homepage' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'weatherCheckerFunction' %}">Check Weather</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'firemap' %}">Fire Map</a>
+      </li>
+
+        </ul>
+      <ul class="navbar-nav ml-auto">
+          <li class="ml-auto nav-item">
+        <a class="nav-link btn-danger" href="{% url 'make-a-alert' %}">Make a ALERT</a>
+      </li>
+              <li class="ml-auto nav-item">
+        <a class="nav-link btn-success" href="{% url 'logout' %}">Logout</a>
+      </li>
+          {% else %}
+              <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'homepage' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'weatherCheckerFunction' %}">Check Weather</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'firemap' %}">Fire Map</a>
+      </li>
+        </ul>
+      <ul class="navbar-nav ml-auto">
+          <li class="ml-auto nav-item">
+        <a class="nav-link btn-danger" href="{% url 'make-a-alert' %}">Make a ALERT</a>
+      </li>
+              <li class="ml-auto nav-item">
+        <a class="nav-link btn-success" href="{% url 'login' %}">Login</a>
+      </li>
+              <li class="ml-auto nav-item">
+        <a class="nav-link btn-warning" href="{% url 'register' %}">Register</a>
+      </li>
+          {% endif %}
+
+      </ul>
+  </div>
+</nav>
